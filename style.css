@@ -33,7 +33,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .font-secondary {
     font-family: 'Pacifico', cursive;
 }
-
+.intro-svg {
+    transform: translateY(-47px);
+}
 h1,
 h2,
 .font-weight-bold {

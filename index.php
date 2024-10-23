@@ -1,6 +1,7 @@
 <?php
 get_header();
 ?>
+
 <body>
     <!-- Topbar Start -->
     <div class="container-fluid px-0 d-none d-lg-block">
@@ -45,18 +46,18 @@ get_header();
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
-                <a href="<?php echo get_template_directory_uri()?>index.php" class="nav-item nav-link active">Home</a>
+                <a href="<?php echo get_template_directory_uri() ?>index.php" class="nav-item nav-link active">Home</a>
                 <a href="about" class="nav-item nav-link">About Us</a>
-                <a href="<?php echo get_template_directory_uri()?>/template-parts/menu.php" class="nav-item nav-link">Menu & Pricing</a>
-                <a href="<?php echo get_template_directory_uri()?>/template-parts/team.php" class="nav-item nav-link">Master Chefs</a>
+                <a href="<?php echo get_template_directory_uri() ?>/template-parts/menu.php" class="nav-item nav-link">Menu & Pricing</a>
+                <a href="<?php echo get_template_directory_uri() ?>/template-parts/team.php" class="nav-item nav-link">Master Chefs</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
-                        <a href="<?php echo get_template_directory_uri()?>/template-parts/service.php" class="dropdown-item">Our Service</a>
-                        <a href="<?php echo get_template_directory_uri()?>/template-parts/testimonial.php" class="dropdown-item">Testimonial</a>
+                        <a href="<?php echo get_template_directory_uri() ?>/template-parts/service.php" class="dropdown-item">Our Service</a>
+                        <a href="<?php echo get_template_directory_uri() ?>/template-parts/testimonial.php" class="dropdown-item">Testimonial</a>
                     </div>
                 </div>
-                <a href="<?php echo get_template_directory_uri()?>/template-parts/contact.php" class="nav-item nav-link">Contact Us</a>
+                <a href="<?php echo get_template_directory_uri() ?>/template-parts/contact.php" class="nav-item nav-link">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -65,6 +66,14 @@ get_header();
 
     <!-- Hero Start -->
     <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+        <div class="intro-svg">
+            <svg xmlns="http://www.w3.org/2000/svg" max-width="100%" viewBox="0 0 283.5 27.8"
+                preserveAspectRatio="xMidYMax slice">
+                <path class="elementor-shape-fill" fill="#e0d2b8"
+                    d="M0 0v1.4c.6.7 1.1 1.4 1.4 2 2 3.8 2.2 6.6 1.8 10.8-.3 3.3-2.4 9.4 0 12.3 1.7 2 3.7 1.4 4.6-.9 1.4-3.8-.7-8.2-.6-12 .1-3.7 3.2-5.5 6.9-4.9 4 .6 4.8 4 4.9 7.4.1 1.8-1.1 7 0 8.5.6.8 1.6 1.2 2.4.5 1.4-1.1.1-5.4.1-6.9.1-3.7.3-8.6 4.1-10.5 5-2.5 6.2 1.6 5.4 5.6-.4 1.7-1 9.2 2.9 6.3 1.5-1.1.7-3.5.5-4.9-.4-2.4-.4-4.3 1-6.5.9-1.4 2.4-3.1 4.2-3 2.4.1 2.7 2.2 4 3.7 1.5 1.8 1.8 2.2 3 .1 1.1-1.9 1.2-2.8 3.6-3.3 1.3-.3 4.8-1.4 5.9-.5 1.5 1.1.6 2.8.4 4.3-.2 1.1-.6 4 1.8 3.4 1.7-.4-.3-4.1.6-5.6 1.3-2.2 5.8-1.4 7 .5 1.3 2.1.5 5.8.1 8.1s-1.2 5-.6 7.4c1.3 5.1 4.4.9 4.3-2.4-.1-4.4-2-8.8-.5-13 .9-2.4 4.6-6.6 7.7-4.5 2.7 1.8.5 7.8.2 10.3-.2 1.7-.8 4.6.2 6.2.9 1.4 2 1.5 2.6-.3.5-1.5-.9-4.5-1-6.1-.2-1.7-.4-3.7.2-5.4 1.8-5.6 3.5 2.4 6.3.6 1.4-.9 4.3-9.4 6.1-3.1.6 2.2-1.3 7.8.7 8.9 4.2 2.3 1.5-7.1 2.2-8 3.1-4 4.7 3.8 6.1 4.1 3.1.7 2.8-7.9 8.1-4.5 1.7 1.1 2.9 3.3 3.2 5.2.4 2.2-1 4.5-.6 6.6 1 4.3 4.4 1.5 4.4-1.7 0-2.7-3-8.3 1.4-9.1 4.4-.9 7.3 3.5 7.8 6.9.3 2-1.5 10.9 1.3 11.3 4.1.6-3.2-15.7 4.8-15.8 4.7-.1 2.8 4.1 3.9 6.6 1 2.4 2.1 1 2.3-.8.3-1.9-.9-3.2 1.3-4.3 5.9-2.9 5.9 5.4 5.5 8.5-.3 2-1.7 8.4 2 8.1 6.9-.5-2.8-16.9 4.8-18.7 4.7-1.2 6.1 3.6 6.3 7.1.1 1.7-1.2 8.1.6 9.1 3.5 2 1.9-7 2-8.4.2-4 1.2-9.6 6.4-9.8 4.7-.2 3.2 4.6 2.7 7.5-.4 2.2 1.3 8.6 3.8 4.4 1.1-1.9-.3-4.1-.3-6 0-1.7.4-3.2 1.3-4.6 1-1.6 2.9-3.5 5.1-2.9 2.5.6 2.3 4.1 4.1 4.9 1.9.8 1.6-.9 2.3-2.1 1.2-2.1 2.1-2.1 4.4-2.4 1.4-.2 3.6-1.5 4.9-.5 2.3 1.7-.7 4.4.1 6.5.6 1.5 2.1 1.7 2.8.3.7-1.4-1.1-3.4-.3-4.8 1.4-2.5 6.2-1.2 7.2 1 2.3 4.8-3.3 12-.2 16.3 3 4.1 3.9-2.8 3.8-4.8-.4-4.3-2.1-8.9 0-13.1 1.3-2.5 5.9-5.7 7.9-2.4 2 3.2-1.3 9.8-.8 13.4.5 4.4 3.5 3.3 2.7-.8-.4-1.9-2.4-10 .6-11.1 3.7-1.4 2.8 7.2 6.5.4 2.2-4.1 4.9-3.1 5.2 1.2.1 1.5-.6 3.1-.4 4.6.2 1.9 1.8 3.7 3.3 1.3 1-1.6-2.6-10.4 2.9-7.3 2.6 1.5 1.6 6.5 4.8 2.7 1.3-1.5 1.7-3.6 4-3.7 2.2-.1 4 2.3 4.8 4.1 1.3 2.9-1.5 8.4.9 10.3 4.2 3.3 3-5.5 2.7-6.9-.6-3.9 1-7.2 5.5-5 4.1 2.1 4.3 7.7 4.1 11.6 0 .8-.6 9.5 2.5 5.2 1.2-1.7-.1-7.7.1-9.6.3-2.9 1.2-5.5 4.3-6.2 4.5-1 7.7 1.5 7.4 5.8-.2 3.5-1.8 7.7-.5 11.1 1 2.7 3.6 2.8 5 .2 1.6-3.1 0-8.3-.4-11.6-.4-4.2-.2-7 1.8-10.8 0 0-.1.1-.1.2-.2.4-.3.7-.4.8v.1c-.1.2-.1.2 0 0v-.1l.4-.8c0-.1.1-.1.1-.2.2-.4.5-.8.8-1.2V0H0zM282.7 3.4z">
+                </path>
+            </svg>
+        </div>
         <div class="container py-5">
             <div class="row justify-content-start">
                 <div class="col-lg-8 text-center text-lg-start">
@@ -117,7 +126,7 @@ get_header();
             <div class="row gx-5">
                 <div class="col-lg-5 mb-5 mb-lg-0" style="min-height: 400px;">
                     <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100" src="<?php echo get_template_directory_uri()?>/assets/img/about.jpg" style="object-fit: cover;">
+                        <img class="position-absolute w-100 h-100" src="<?php echo get_template_directory_uri() ?>/assets/img/about.jpg" style="object-fit: cover;">
                     </div>
                 </div>
                 <div class="col-lg-6 pb-5">
@@ -153,10 +162,10 @@ get_header();
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row img-twice position-relative h-100">
                         <div class="col-6">
-                            <img class="img-fluid rounded" src="<?php echo get_template_directory_uri()?>/assets/img/about-1.jpg" alt="">
+                            <img class="img-fluid rounded" src="<?php echo get_template_directory_uri() ?>/assets/img/about-1.jpg" alt="">
                         </div>
                         <div class="col-6 align-self-end">
-                            <img class="img-fluid rounded" src="<?php echo get_template_directory_uri()?>/assets/img/about-2.jpg" alt="">
+                            <img class="img-fluid rounded" src="<?php echo get_template_directory_uri() ?>/assets/img/about-2.jpg" alt="">
                         </div>
                     </div>
                 </div>
@@ -268,7 +277,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -280,7 +289,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -292,7 +301,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -304,7 +313,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -316,7 +325,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -328,7 +337,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -344,7 +353,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -356,7 +365,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -368,7 +377,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -380,7 +389,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -392,7 +401,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -404,7 +413,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -420,7 +429,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-3.jpg alt=" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg alt=" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -432,7 +441,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -444,7 +453,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -456,7 +465,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -468,7 +477,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -480,7 +489,7 @@ get_header();
                             <div class="col-lg-6">
                                 <div class="d-flex h-100">
                                     <div class="flex-shrink-0">
-                                        <img class="img-fluid" src="<?php echo get_template_directory_uri()?>/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
+                                        <img class="img-fluid" src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg" alt="" style="width: 150px; height: 85px;">
                                         <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
                                     </div>
                                     <div class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
@@ -544,7 +553,7 @@ get_header();
                 <div class="col-lg-4 col-md-6">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="<?php echo get_template_directory_uri()?>/assets/img/team-1.jpg" alt="">
+                            <img class="img-fluid w-100" src="<?php echo get_template_directory_uri() ?>/assets/img/team-1.jpg" alt="">
                             <div class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
                                 <div class="d-flex align-items-center justify-content-start">
                                     <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
@@ -562,7 +571,7 @@ get_header();
                 <div class="col-lg-4 col-md-6">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="<?php echo get_template_directory_uri()?>/assets/img/team-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="<?php echo get_template_directory_uri() ?>/assets/img/team-2.jpg" alt="">
                             <div class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
                                 <div class="d-flex align-items-center justify-content-start">
                                     <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
@@ -580,7 +589,7 @@ get_header();
                 <div class="col-lg-4 col-md-6">
                     <div class="team-item">
                         <div class="position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="<?php echo get_template_directory_uri()?>/assets/img/team-3.jpg" alt="">
+                            <img class="img-fluid w-100" src="<?php echo get_template_directory_uri() ?>/assets/img/team-3.jpg" alt="">
                             <div class="team-overlay w-100 h-100 position-absolute top-50 start-50 translate-middle d-flex align-items-center justify-content-center">
                                 <div class="d-flex align-items-center justify-content-start">
                                     <a class="btn btn-lg btn-primary btn-lg-square border-inner rounded-0 mx-1" href="#"><i class="fab fa-twitter fw-normal"></i></a>
@@ -630,7 +639,7 @@ get_header();
             <div class="owl-carousel testimonial-carousel">
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="<?php echo get_template_directory_uri()?>/assets/img/testimonial-1.jpg" style="width: 60px; height: 60px;">
+                        <img class="img-fluid flex-shrink-0" src="<?php echo get_template_directory_uri() ?>/assets/img/testimonial-1.jpg" style="width: 60px; height: 60px;">
                         <div class="ps-3">
                             <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
                             <span>Profession</span>
@@ -641,7 +650,7 @@ get_header();
                 </div>
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="<?php echo get_template_directory_uri()?>/assets/img/testimonial-2.jpg" style="width: 60px; height: 60px;">
+                        <img class="img-fluid flex-shrink-0" src="<?php echo get_template_directory_uri() ?>/assets/img/testimonial-2.jpg" style="width: 60px; height: 60px;">
                         <div class="ps-3">
                             <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
                             <span>Profession</span>
@@ -652,7 +661,7 @@ get_header();
                 </div>
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="<?php echo get_template_directory_uri()?>/assets/img/testimonial-3.jpg" style="width: 60px; height: 60px;">
+                        <img class="img-fluid flex-shrink-0" src="<?php echo get_template_directory_uri() ?>/assets/img/testimonial-3.jpg" style="width: 60px; height: 60px;">
                         <div class="ps-3">
                             <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
                             <span>Profession</span>
@@ -663,7 +672,7 @@ get_header();
                 </div>
                 <div class="testimonial-item bg-dark text-white border-inner p-4">
                     <div class="d-flex align-items-center mb-3">
-                        <img class="img-fluid flex-shrink-0" src="<?php echo get_template_directory_uri()?>/assets/img/testimonial-4.jpg" style="width: 60px; height: 60px;">
+                        <img class="img-fluid flex-shrink-0" src="<?php echo get_template_directory_uri() ?>/assets/img/testimonial-4.jpg" style="width: 60px; height: 60px;">
                         <div class="ps-3">
                             <h4 class="text-primary text-uppercase mb-1">Client Name</h4>
                             <span>Profession</span>
@@ -676,12 +685,12 @@ get_header();
         </div>
     </div> -->
     <!-- Testimonial End -->
-    
+
 
     <!-- Footer Start -->
-    <?php 
-	get_footer();
-	?>
+    <?php
+    get_footer();
+    ?>
     <!-- Footer End -->
 
 
