@@ -1,4 +1,5 @@
 <?php
+// Template Name:service
 get_header();
 ?>
 <body>

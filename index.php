@@ -46,18 +46,18 @@ get_header();
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
-                <a href="<?php echo get_template_directory_uri() ?>index.php" class="nav-item nav-link active">Home</a>
-                <a href="about" class="nav-item nav-link">About Us</a>
-                <a href="<?php echo get_template_directory_uri() ?>/template-parts/menu.php" class="nav-item nav-link">Menu & Pricing</a>
-                <a href="<?php echo get_template_directory_uri() ?>/template-parts/team.php" class="nav-item nav-link">Master Chefs</a>
+                <a href="<?php echo site_url(''); ?>" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">About Us</a>
+                <a href="#" class="nav-item nav-link">Menu & Pricing</a>
+                <a href="#" class="nav-item nav-link">Master Chefs</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
-                        <a href="<?php echo get_template_directory_uri() ?>/template-parts/service.php" class="dropdown-item">Our Service</a>
-                        <a href="<?php echo get_template_directory_uri() ?>/template-parts/testimonial.php" class="dropdown-item">Testimonial</a>
+                        <a href="service" class="dropdown-item">Our Service</a>
+                        <a href="#" class="dropdown-item">Testimonial</a>
                     </div>
                 </div>
-                <a href="<?php echo get_template_directory_uri() ?>/template-parts/contact.php" class="nav-item nav-link">Contact Us</a>
+                <a href="#" class="nav-item nav-link">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -79,7 +79,7 @@ get_header();
                 <div class="col-lg-8 text-center text-lg-start">
                     <h1 class="font-secondary text-primary mb-4">Super Crispy</h1>
                     <h1 class="display-1 text-uppercase text-white mb-4">CakeZone</h1>
-                    <h1 class="text-uppercase text-white">The Best Cake In London</h1>
+                    <h1 class="text-uppercase text-white">The Best Cake In Islamabd</h1>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="" class="btn btn-primary border-inner py-3 px-5 me-5">Read More</a>
                         <button type="button" class="btn-play" data-bs-toggle="modal"
@@ -258,69 +258,6 @@ get_header();
         </div>
     </div>
     <!-- Facts End -->
-
-
-    <!-- Service Start -->
-    <div class="container-xxl py-6">
-        <div class="container">
-            <div class="row g-5">
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="text-primary text-uppercase mb-2">// Our Services</p>
-                    <h1 class="display-6 mb-4">What Do We Offer For You?</h1>
-                    <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                    <div class="row gy-5 gx-4">
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3 d-flex align-items-center justify-content-center">
-                                    <i class="fa fa-bread-slice text-white"></i>
-                                </div>
-                                <h5 class="mb-0">Quality Products</h5>
-                            </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                    <i class="fa fa-birthday-cake text-white"></i>
-                                </div>
-                                <h5 class="mb-0">Custom Products</h5>
-                            </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                    <i class="fa fa-cart-plus text-white"></i>
-                                </div>
-                                <h5 class="mb-0">Online Order</h5>
-                            </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
-                        </div>
-                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="flex-shrink-0 btn-square bg-primary rounded-circle me-3">
-                                    <i class="fa fa-truck text-white"></i>
-                                </div>
-                                <h5 class="mb-0">Home Delivery</h5>
-                            </div>
-                            <span>Magna sea eos sit dolor, ipsum amet ipsum lorem diam eos</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
-                    <div class="row img-twice position-relative h-100">
-                        <div class="col-6">
-                            <img class="img-fluid rounded" src="<?php echo get_template_directory_uri()?>/assets/img/service-1.jpg" alt="">
-                        </div>
-                        <div class="col-6 align-self-end">
-                            <img class="img-fluid rounded" src="<?php echo get_template_directory_uri()?>/assets/img/service-2.jpg" alt="">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Service End -->
 
 
     <!-- Products Start -->
@@ -768,7 +705,33 @@ get_header();
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroHeader = document.querySelector('.hero-header');
 
+            // Array of image URLs with the correct WordPress path
+            const images = [
+                '<?php echo get_template_directory_uri(); ?>/assets/img/hero.jpg',
+                '<?php echo get_template_directory_uri(); ?>/assets/img/hero4.jpg',
+                '<?php echo get_template_directory_uri(); ?>/assets/img/hero3.jpg',
+                '<?php echo get_template_directory_uri(); ?>/assets/img/hero4.jpg'
+            ];
+
+            let currentImageIndex = 0;
+
+            function changeBackgroundImage() {
+                // Update the background image
+                heroHeader.style.backgroundImage = `url(${images[currentImageIndex]})`;
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            }
+
+            // Change the background image every 10 seconds
+            setInterval(changeBackgroundImage, 10000);
+
+            // Set the first image initially
+            changeBackgroundImage();
+        });
+    </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
