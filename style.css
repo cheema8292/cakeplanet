@@ -36,6 +36,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .intro-svg {
     transform: translateY(-47px);
 }
+.intro-svg-2 {
+    transform: translateY(195px);
+}
 h1,
 h2,
 .font-weight-bold {
