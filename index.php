@@ -48,23 +48,18 @@ get_header();
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto mx-lg-auto py-0">
-                <a href="<?php echo get_template_directory_uri() ?>index.php" class="nav-item nav-link active">Home</a>
-                <a href="about" class="nav-item nav-link">About Us</a>
-                <a href="<?php echo get_template_directory_uri() ?>/template-parts/menu.php"
-                    class="nav-item nav-link">Menu & Pricing</a>
-                <a href="<?php echo get_template_directory_uri() ?>/template-parts/team.php"
-                    class="nav-item nav-link">Master Chefs</a>
+                <a href="<?php echo site_url(''); ?>" class="nav-item nav-link active">Home</a>
+                <a href="#" class="nav-item nav-link">About Us</a>
+                <a href="#" class="nav-item nav-link">Menu & Pricing</a>
+                <a href="#" class="nav-item nav-link">Master Chefs</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                     <div class="dropdown-menu m-0">
-                        <a href="<?php echo get_template_directory_uri() ?>/template-parts/service.php"
-                            class="dropdown-item">Our Service</a>
-                        <a href="<?php echo get_template_directory_uri() ?>/template-parts/testimonial.php"
-                            class="dropdown-item">Testimonial</a>
+                        <a href="service" class="dropdown-item">Our Service</a>
+                        <a href="#" class="dropdown-item">Testimonial</a>
                     </div>
                 </div>
-                <a href="<?php echo get_template_directory_uri() ?>/template-parts/contact.php"
-                    class="nav-item nav-link">Contact Us</a>
+                <a href="#" class="nav-item nav-link">Contact Us</a>
             </div>
         </div>
     </nav>
@@ -86,7 +81,7 @@ get_header();
                 <div class="col-lg-8 text-center text-lg-start">
                     <h1 class="font-secondary text-primary mb-4">Super Crispy</h1>
                     <h1 class="display-1 text-uppercase text-white mb-4">CakeZone</h1>
-                    <h1 class="text-uppercase text-white">The Best Cake In London</h1>
+                    <h1 class="text-uppercase text-white">The Best Cake In Islamabd</h1>
                     <div class="d-flex align-items-center justify-content-center justify-content-lg-start pt-5">
                         <a href="" class="btn btn-primary border-inner py-3 px-5 me-5">Read More</a>
                         <button type="button" class="btn-play" data-bs-toggle="modal"
@@ -356,6 +351,60 @@ get_header();
         </div>
     </div>
     <!-- About other End -->
+
+
+    <!-- Facts Start -->
+    <div class="container-fluid bg-img py-5 mb-5">
+        <div class="container py-5">
+            <div class="row gx-5 gy-4">
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-star text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h6 class="text-primary text-uppercase">Our Experience</h6>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-users text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h6 class="text-primary text-uppercase">Cake Specialist</h6>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-check text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h6 class="text-primary text-uppercase">Complete Project</h6>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="d-flex">
+                        <div class="bg-primary border-inner d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="fa fa-mug-hot text-white"></i>
+                        </div>
+                        <div class="ps-4">
+                            <h6 class="text-primary text-uppercase">Happy Clients</h6>
+                            <h1 class="display-5 text-white mb-0" data-toggle="counter-up">12345</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Facts End -->
 
 
     <!-- Products Start -->
@@ -687,7 +736,33 @@ get_header();
     <!-- Back to Top -->
     <a href="#" class="btn btn-primary border-inner py-3 fs-4 back-to-top"><i class="bi bi-arrow-up"></i></a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroHeader = document.querySelector('.hero-header');
 
+            // Array of image URLs with the correct WordPress path
+            const images = [
+                '<?php echo get_template_directory_uri(); ?>/assets/img/hero.jpg',
+                '<?php echo get_template_directory_uri(); ?>/assets/img/hero4.jpg',
+                '<?php echo get_template_directory_uri(); ?>/assets/img/hero3.jpg',
+                '<?php echo get_template_directory_uri(); ?>/assets/img/hero4.jpg'
+            ];
+
+            let currentImageIndex = 0;
+
+            function changeBackgroundImage() {
+                // Update the background image
+                heroHeader.style.backgroundImage = `url(${images[currentImageIndex]})`;
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+            }
+
+            // Change the background image every 10 seconds
+            setInterval(changeBackgroundImage, 10000);
+
+            // Set the first image initially
+            changeBackgroundImage();
+        });
+    </script>
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

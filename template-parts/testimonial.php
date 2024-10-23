@@ -1,4 +1,5 @@
 <?php
+// Template Name:testimonial
 get_header();
 ?>
 <body>

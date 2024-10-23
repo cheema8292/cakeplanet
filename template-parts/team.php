@@ -1,4 +1,5 @@
 <?php
+// Template Name:team
 get_header();
 ?>
 <body>
