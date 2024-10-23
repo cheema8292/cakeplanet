@@ -36,6 +36,6 @@
 
     <!-- Template Stylesheet -->
     <link href="<?php echo get_template_directory_uri()?>/style.css" rel="stylesheet">
-    <link href="<?php echo get_template_directory_uri()?>/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?php echo get_template_directory_uri()?>./assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
 
 </head>
