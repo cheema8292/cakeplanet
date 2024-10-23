@@ -380,302 +380,92 @@ get_header();
                 </ul>
                 <div class="tab-content">
                     <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="row g-3">
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                        <div class="container">
+                            <div class="card__container">
+                                <article class="card__article">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/The BEST Moist Chocolate Cake Recipe!.jpeg"
+                                        alt="image" class="card__img">
+                                    <div class="card__data">
+                                        <h2 class="card__title">The Great Path</h2>
+                                        <div class="btn btn-dark">Add To Cart</div>
                                     </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Birthday Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
+                                </article>
+                                <article class="card__article">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Triple Chocolate Ombre Cake.jpeg"
+                                        alt="image" class="card__img">
+                                    <div class="card__data">
+                                        <h2 class="card__title">Starry Night</h2>
+                                        <div class="btn btn-dark">Add To Cart</div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </article>
+                                <article class="card__article">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Peanut Butter Chocolate Layer Cake + Reese's Cups!.jpeg"
+                                        alt="image" class="card__img">
+                                    <div class="card__data">
+                                        <h2 class="card__title">Path Of Peace</h2>
+                                        <div class="btn btn-dark">Add To Cart</div>
                                     </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Birthday Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Birthday Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Birthday Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Birthday Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-1.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Birthday Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
+                                </article>
                             </div>
                         </div>
                     </div>
                     <div id="tab-2" class="tab-pane fade show p-0">
-                        <div class="row g-3">
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                        <div class="container">
+                            <div class="card__container">
+                                <article class="card__article">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/The BEST Moist Chocolate Cake Recipe!.jpeg"
+                                        alt="image" class="card__img">
+                                    <div class="card__data">
+                                        <h2 class="card__title">The Great Path</h2>
+                                        <div class="btn btn-dark">Add To Cart</div>
                                     </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
+                                </article>
+                                <article class="card__article">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Triple Chocolate Ombre Cake.jpeg"
+                                        alt="image" class="card__img">
+                                    <div class="card__data">
+                                        <h2 class="card__title">Starry Night</h2>
+                                        <div class="btn btn-dark">Add To Cart</div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </article>
+                                <article class="card__article">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Peanut Butter Chocolate Layer Cake + Reese's Cups!.jpeg"
+                                        alt="image" class="card__img">
+                                    <div class="card__data">
+                                        <h2 class="card__title">Path Of Peace</h2>
+                                        <div class="btn btn-dark">Add To Cart</div>
                                     </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-2.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Wedding Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
+                                </article>
                             </div>
                         </div>
                     </div>
                     <div id="tab-3" class="tab-pane fade show p-0">
-                        <div class="row g-3">
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg alt="
-                                            style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                        <div class="container">
+                            <div class="card__container">
+                                <article class="card__article">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/The BEST Moist Chocolate Cake Recipe!.jpeg"
+                                        alt="image" class="card__img">
+                                    <div class="card__data">
+                                        <h2 class="card__title">The Great Path</h2>
+                                        <div class="btn btn-dark">Add To Cart</div>
                                     </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
+                                </article>
+                                <article class="card__article">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Triple Chocolate Ombre Cake.jpeg"
+                                        alt="image" class="card__img">
+                                    <div class="card__data">
+                                        <h2 class="card__title">Starry Night</h2>
+                                        <div class="btn btn-dark">Add To Cart</div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
+                                </article>
+                                <article class="card__article">
+                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Peanut Butter Chocolate Layer Cake + Reese's Cups!.jpeg"
+                                        alt="image" class="card__img">
+                                    <div class="card__data">
+                                        <h2 class="card__title">Path Of Peace</h2>
+                                        <div class="btn btn-dark">Add To Cart</div>
                                     </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="d-flex h-100">
-                                    <div class="flex-shrink-0">
-                                        <img class="img-fluid"
-                                            src="<?php echo get_template_directory_uri() ?>/assets/img/cake-3.jpg"
-                                            alt="" style="width: 150px; height: 85px;">
-                                        <h4 class="bg-dark text-primary p-2 m-0">$99.00</h4>
-                                    </div>
-                                    <div
-                                        class="d-flex flex-column justify-content-center text-start bg-secondary border-inner px-4">
-                                        <h5 class="text-uppercase">Custom Cake</h5>
-                                        <span>Ipsum ipsum clita erat amet dolor sit justo sea eirmod diam stet sit
-                                            justo</span>
-                                    </div>
-                                </div>
+                                </article>
                             </div>
                         </div>
                     </div>
