@@ -497,6 +497,9 @@ img {
 .card__article {
     position: relative;
     overflow: hidden;
+text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 .card__img {
@@ -562,6 +565,10 @@ img {
     animation: remove-data 1s forwards;
 }
 
+.tab-pane {
+display: block;
+    justify-content: center;
+	align-items: center;}
 /* Card animation */
 @keyframes show-data {
     50% {
@@ -623,6 +630,7 @@ img {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 1.5rem;
     }
+
 }
 
 /* For large devices */
@@ -638,5 +646,10 @@ img {
     .card__data {
         width: 316px;
         padding-inline: 2.5rem;
+    }
+}
+@media (max-width: 768px) {
+    .intro-svg-2 {
+        display: none;
     }
 }
