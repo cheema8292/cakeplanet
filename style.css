@@ -497,7 +497,7 @@ img {
 .card__article {
     position: relative;
     overflow: hidden;
-text-align: center;
+    text-align: center;
     display: flex;
     justify-content: center;
 }
@@ -566,9 +566,11 @@ text-align: center;
 }
 
 .tab-pane {
-display: block;
+    display: block;
     justify-content: center;
-	align-items: center;}
+    align-items: center;
+}
+
 /* Card animation */
 @keyframes show-data {
     50% {
@@ -644,6 +646,7 @@ display: block;
         padding-inline: 2.5rem;
     }
 }
+
 @media (max-width: 768px) {
     .intro-svg-2 {
         display: none;
