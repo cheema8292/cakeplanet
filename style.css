@@ -32,7 +32,9 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
     --light: #FFFFFF;
     --dark: #2B2825;
 }
-
+body{
+    overflow-x: hidden !important;
+}
 .font-secondary {
     font-family: 'Pacifico', cursive;
 }
