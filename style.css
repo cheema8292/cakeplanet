@@ -24,6 +24,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /*=============== GOOGLE FONTS ===============*/
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+@font-face {
+    font-family: 'Foglihten';
+    src: url('./assets/font07/Foglihtenno07-e9wz3.otf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
 
 /********** Template CSS **********/
 :root {
@@ -51,6 +57,7 @@ h1,
 h2,
 .font-weight-bold {
     font-weight: 700 !important;
+    font-family: "Foglihten", Arial, Helvetica, sans-serif;
 }
 
 h3,

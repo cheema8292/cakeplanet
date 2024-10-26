@@ -117,7 +117,7 @@ get_header();
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
-                    <p class="text-primary text-uppercase mb-2">// Our Services</p>
+                    <h2 class="text-primary font-secondary text-uppercase mb-2">Our Services</h2>
                     <h1 class="display-6 mb-4">What Do We Offer For You?</h1>
                     <p class="mb-5">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et
                         eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
@@ -259,7 +259,7 @@ get_header();
                 </div>
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
                     <div class="h-100">
-                        <p class="text-primary text-uppercase mb-2">// About Us</p>
+                        <h2 class="text-primary font-secondary text-uppercase mb-2">More About Us</h2>
                         <h1 class="display-6 mb-4">We Bake Every Item From The Core Of Our Hearts</h1>
                         <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
                             Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
