@@ -3,7 +3,7 @@ get_header();
 ?>
 
 <body>
-  <!-- Hero Start -->
+    <!-- Hero Start -->
     <div class="container-fluid bg-primary py-5 ps-0 pe-0 mb-5 hero-header">
         <div class="intro-svg">
             <svg xmlns="http://www.w3.org/2000/svg" max-width="100%" viewBox="0 0 283.5 27.8"
@@ -351,115 +351,53 @@ get_header();
                 <h2 class="text-primary font-secondary">Menu & Pricing</h2>
                 <h1 class="display-4 text-uppercase">Explore Our Cakes</h1>
             </div>
+
             <div class="tab-class text-center">
-                <ul
-                    class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
-                    <li class="nav-item">
-                        <a class="nav-link text-white active" data-bs-toggle="pill" href="#tab-1">Birthday</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-2">Wedding</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" data-bs-toggle="pill" href="#tab-3">Custom</a>
-                    </li>
+                <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
+                    <?php
+                    $categories = get_first_three_categories();
+                    $active = 'active'; // Set the first category as active
+                    foreach ($categories as $category) {
+                        echo '<li class="nav-item">
+                            <a class="nav-link text-white ' . $active . '" data-bs-toggle="pill" href="#tab-' . $category->id . '">' . esc_html($category->name) . '</a>
+                          </li>';
+                        $active = ''; // Remove active class after first item
+                    }
+                    ?>
                 </ul>
                 <div class="tab-content">
-                    <div id="tab-1" class="tab-pane fade show p-0 active">
-                        <div class="container">
-                            <div class="card__container">
-                                <article class="card__article">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/The BEST Moist Chocolate Cake Recipe!.jpeg"
-                                        alt="image" class="card__img">
-                                    <div class="card__data">
-                                        <h2 class="card__title">The Great Path</h2>
-                                        <div class="btn btn-dark">Add To Cart</div>
-                                    </div>
-                                </article>
-                                <article class="card__article">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Triple Chocolate Ombre Cake.jpeg"
-                                        alt="image" class="card__img">
-                                    <div class="card__data">
-                                        <h2 class="card__title">Starry Night</h2>
-                                        <div class="btn btn-dark">Add To Cart</div>
-                                    </div>
-                                </article>
-                                <article class="card__article">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Peanut Butter Chocolate Layer Cake + Reese's Cups!.jpeg"
-                                        alt="image" class="card__img">
-                                    <div class="card__data">
-                                        <h2 class="card__title">Path Of Peace</h2>
-                                        <div class="btn btn-dark">Add To Cart</div>
-                                    </div>
-                                </article>
+                    <?php
+                    $active_class = 'show active'; // Set the first tab as active
+                    foreach ($categories as $category) {
+                        $products = get_products_by_category($category->id);
+                    ?>
+                        <div id="tab-<?php echo $category->id; ?>" class="tab-pane fade <?php echo $active_class; ?> p-0">
+                            <div class="container">
+                                <div class="card__container">
+                                    <?php foreach ($products as $product) { ?>
+                                        <article class="card__article">
+                                            <img src="<?php echo esc_url($product->image_url); ?>" alt="image" class="card__img">
+                                            <div class="card__data">
+                                                <h2 class="card__title"><?php echo esc_html($product->title); ?></h2>
+                                                <p class="card__price"><?php echo esc_html('$' . number_format($product->price, 2)); ?></p> <!-- Added price display -->
+                                                <div class="btn btn-dark">Add To Cart</div>
+                                            </div>
+                                        </article>
+                                    <?php } ?>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="tab-2" class="tab-pane fade show p-0">
-                        <div class="container">
-                            <div class="card__container">
-                                <article class="card__article">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/The BEST Moist Chocolate Cake Recipe!.jpeg"
-                                        alt="image" class="card__img">
-                                    <div class="card__data">
-                                        <h2 class="card__title">The Great Path</h2>
-                                        <div class="btn btn-dark">Add To Cart</div>
-                                    </div>
-                                </article>
-                                <article class="card__article">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Triple Chocolate Ombre Cake.jpeg"
-                                        alt="image" class="card__img">
-                                    <div class="card__data">
-                                        <h2 class="card__title">Starry Night</h2>
-                                        <div class="btn btn-dark">Add To Cart</div>
-                                    </div>
-                                </article>
-                                <article class="card__article">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Peanut Butter Chocolate Layer Cake + Reese's Cups!.jpeg"
-                                        alt="image" class="card__img">
-                                    <div class="card__data">
-                                        <h2 class="card__title">Path Of Peace</h2>
-                                        <div class="btn btn-dark">Add To Cart</div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="tab-3" class="tab-pane fade show p-0">
-                        <div class="container">
-                            <div class="card__container">
-                                <article class="card__article">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/The BEST Moist Chocolate Cake Recipe!.jpeg"
-                                        alt="image" class="card__img">
-                                    <div class="card__data">
-                                        <h2 class="card__title">The Great Path</h2>
-                                        <div class="btn btn-dark">Add To Cart</div>
-                                    </div>
-                                </article>
-                                <article class="card__article">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Triple Chocolate Ombre Cake.jpeg"
-                                        alt="image" class="card__img">
-                                    <div class="card__data">
-                                        <h2 class="card__title">Starry Night</h2>
-                                        <div class="btn btn-dark">Add To Cart</div>
-                                    </div>
-                                </article>
-                                <article class="card__article">
-                                    <img src="<?php echo get_template_directory_uri() ?>/assets/img/Peanut Butter Chocolate Layer Cake + Reese's Cups!.jpeg"
-                                        alt="image" class="card__img">
-                                    <div class="card__data">
-                                        <h2 class="card__title">Path Of Peace</h2>
-                                        <div class="btn btn-dark">Add To Cart</div>
-                                    </div>
-                                </article>
-                            </div>
-                        </div>
-                    </div>
+                    <?php
+                        $active_class = ''; // Remove active class after first tab
+                    }
+                    ?>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- Products End -->
+
 
 
     <!-- Service Start -->
@@ -670,7 +608,7 @@ get_header();
     <!-- Footer End -->
 
 
-    
+
 </body>
 
 </html>

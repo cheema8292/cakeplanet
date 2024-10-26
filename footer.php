@@ -70,6 +70,166 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        updateCartCounter();
+
+        // Event Delegation for Add to Cart Button
+        document.body.addEventListener('click', function(event) {
+            if (event.target.classList.contains('add-to-cart-btn')) {
+                console.log('Add to Cart Button Clicked'); // Debug log
+
+                const product = {
+                    id: event.target.dataset.id,
+                    title: event.target.dataset.title,
+                    price: parseFloat(event.target.dataset.price),
+                    image: event.target.dataset.image,
+                    quantity: 1,
+                };
+
+                addToCart(product);
+                updateCartCounter();
+            }
+        });
+
+        function addToCart(product) {
+            if (product.price < 0) {
+                alert('Invalid price.');
+                return;
+            }
+
+            const existingProduct = cart.find(item => item.id === product.id);
+            if (existingProduct) {
+                existingProduct.quantity += 1;
+            } else {
+                cart.push(product);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Product added to cart!');
+        }
+
+        function updateCartCounter() {
+            document.getElementById('cart-counter').innerText = cart.reduce(
+                (total, item) => total + item.quantity, 0
+            );
+        }
+
+        // Render Cart Items if on Cart Page
+        if (document.getElementById('cart-items')) {
+            renderCart();
+        }
+
+        function renderCart() {
+            const cartContainer = document.getElementById('cart-items');
+            cartContainer.innerHTML = '';
+            let total = 0;
+
+            console.log('Current Cart:', cart); // Debug log
+
+            if (cart.length === 0) {
+                cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+                document.getElementById('cart-total').innerText = 'Total: $0.00';
+                return;
+            }
+
+            cart.forEach((item, index) => {
+                total += item.price * item.quantity;
+                cartContainer.innerHTML += `
+                <div class="cart-item">
+                    <img src="${item.image}" class="cart-item-img" />
+                    <div class="cart-item-details">
+                        <h4>${item.title}</h4>
+                        <p>$${item.price.toFixed(2)}</p>
+                        <div class="quantity-controls">
+                            <button onclick="changeQuantity(${index}, -1)">-</button>
+                            <span>${item.quantity}</span>
+                            <button onclick="changeQuantity(${index}, 1)">+</button>
+                        </div>
+                    </div>
+                    <button class="remove-item-btn" onclick="removeItem(${index})">Remove</button>
+                </div>
+            `;
+            });
+
+            document.getElementById('cart-total').innerText = `Total: $${total.toFixed(2)}`;
+        }
+
+        window.changeQuantity = function(index, delta) {
+            cart[index].quantity += delta;
+            if (cart[index].quantity <= 0) {
+                cart.splice(index, 1);
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+            updateCartCounter();
+        };
+
+        window.removeItem = function(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            renderCart();
+            updateCartCounter();
+        };
+        document.getElementById('checkoutModal').addEventListener('click', function(event) {
+            if (event.target.classList.contains('btn-primary') && event.target.innerText === 'Send message') {
+                event.preventDefault(); // Prevent default form submission
+
+                // Collect form data
+                const firstName = document.getElementById('first-name').value;
+                const lastName = document.getElementById('last-name').value;
+                const phone1 = document.getElementById('phone1').value;
+                const phone2 = document.getElementById('phone2').value;
+                const email = document.getElementById('email').value;
+                const address = document.getElementById('address').value;
+
+                // Prepare the data object
+                const orderData = {
+                    customer: {
+                        firstName,
+                        lastName,
+                        phone1,
+                        phone2,
+                        email,
+                        address,
+                        location: document.getElementById('demo').innerText // Assuming location is displayed here
+                    },
+                    cart: cart // Use the existing cart variable
+                };
+
+                // Send data to the server
+                fetch('<?php echo admin_url('admin-ajax.php'); ?>?action=process_checkout', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(orderData)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                            alert('Order placed successfully!');
+                            // Optionally, clear the cart and form fields here
+                            localStorage.removeItem('cart');
+                            cart = [];
+                            updateCartCounter();
+                            renderCart(); // Clear cart display
+                        } else {
+                            alert('Failed to place the order. Please try again.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred while placing your order.');
+                    });
+            }
+        });
+    });
+
+
+
+
+
+
+    document.addEventListener('DOMContentLoaded', function() {
         const heroHeader = document.querySelector('.hero-header');
 
         // Array of image URLs with the correct WordPress path
@@ -94,7 +254,19 @@
         // Set the first image initially
         changeBackgroundImage();
     });
+
+
+    const x = document.getElementById("demo");
+
+    function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else {
+            x.innerHTML = "Geolocation is not supported by this browser.";
+        }
+    }
 </script>
+
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>

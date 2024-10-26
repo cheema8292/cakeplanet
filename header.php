@@ -39,6 +39,7 @@
     <!-- Template Stylesheet -->
     <link href="<?php echo get_template_directory_uri() ?>/style.css" rel="stylesheet">
     <link href="<?php echo get_template_directory_uri() ?>./assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
 
 </head>
 
@@ -100,6 +101,13 @@
                 </div>
             </div>
             <a href="<?php echo site_url('/contact'); ?>" class="nav-item nav-link">Contact Us</a>
+            <li class="nav-item">
+                <a class="nav-link" href="<?php echo site_url('/cart'); ?>">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-counter">0</span>
+                </a>
+            </li>
+
         </div>
     </div>
 </nav>
