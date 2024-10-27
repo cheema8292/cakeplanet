@@ -69,8 +69,8 @@ get_header();
                 <h2 class="text-primary font-secondary">About Us</h2>
                 <h1 class="display-4 text-uppercase">Welcome To CakePlanet</h1>
             </div>
-            <div class="row gx-5">
-                <div class="col-lg-4 mb-5 mb-lg-0" style="min-height: 400px;">
+            <div class="row gx-3">
+                <div class="col-lg-4 col-md-4 col-sm-12 mb-5 mb-lg-0" style="min-height: 400px;">
                     <!-- <div class="position-relative h-100">
                         <img class="position-absolute w-100 h-100"
                             src="<?php echo get_template_directory_uri() ?>/assets/img/about.jpg"
@@ -81,30 +81,134 @@ get_header();
                             <div class="card_title">Dunky Donuts</div>
                             <div class="card_desc">We sell the best donuts around here in NY</div>
                         </div>
+                        <div class="card_icons d-flex flex-column">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-search" onclick="openModal()"></i>
+                        </div>
                         <div class="card_bottom_shadow"></div>
                     </div>
+
+                    <!-- Modal Structure -->
+                    <div class="modal" id="productModal">
+                        <div class="modal_content">
+                            <span class="close_btn" onclick="closeModal()">&times;</span>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2021/06/06/119434.jpeg"
+                                        alt="Three Milk Cake" class="modal_image">
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="modal_details">
+                                        <div class="modal_title">Three Milk Cake</div>
+                                        <div class="modal_price">Rs 2,200</div>
+                                        <div class="modal_desc">
+                                            Vanilla sponge cake in three kinds of milk; Whole milk, Evaporated milk, and
+                                            Condensed milk!
+                                        </div>
+                                        <div class="quantity_selector">
+                                            <button class="quantity_btn" onclick="decreaseQuantity()">-</button>
+                                            <div class="quantity_display" id="quantityDisplay">1</div>
+                                            <button class="quantity_btn" onclick="increaseQuantity()">+</button>
+                                            <button class="add_to_cart_btn">Add to cart</button>
+                                        </div>
+                                        <div class="modal_sku mt-3"><strong>SKU:</strong> DR-21019</div>
+                                        <div class="modal_category"><strong>Category:</strong> Cakes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 pb-5">
+                <div class="col-lg-4 col-md-4 col-sm-12 pb-5">
                     <div class="card">
                         <div class="card_content">
                             <div class="card_title">Dunky Donuts</div>
                             <div class="card_desc">We sell the best donuts around here in NY</div>
                         </div>
+                        <div class="card_icons d-flex flex-column">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-search" onclick="openModal()"></i>
+                        </div>
                         <div class="card_bottom_shadow"></div>
                     </div>
+
+                    <!-- Modal Structure -->
+                    <div class="modal" id="productModal">
+                        <div class="modal_content">
+                            <span class="close_btn" onclick="closeModal()">&times;</span>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2021/06/06/119434.jpeg"
+                                        alt="Three Milk Cake" class="modal_image">
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="modal_details">
+                                        <div class="modal_title">Three Milk Cake</div>
+                                        <div class="modal_price">Rs 2,200</div>
+                                        <div class="modal_desc">
+                                            Vanilla sponge cake in three kinds of milk; Whole milk, Evaporated milk, and
+                                            Condensed milk!
+                                        </div>
+                                        <div class="quantity_selector">
+                                            <button class="quantity_btn" onclick="decreaseQuantity()">-</button>
+                                            <div class="quantity_display" id="quantityDisplay">1</div>
+                                            <button class="quantity_btn" onclick="increaseQuantity()">+</button>
+                                            <button class="add_to_cart_btn">Add to cart</button>
+                                        </div>
+                                        <div class="modal_sku mt-3"><strong>SKU:</strong> DR-21019</div>
+                                        <div class="modal_category"><strong>Category:</strong> Cakes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-lg-4 pb-5">
+                <div class="col-lg-4 col-md-4 col-sm-12 pb-5">
                     <div class="card">
                         <div class="card_content">
                             <div class="card_title">Dunky Donuts</div>
                             <div class="card_desc">We sell the best donuts around here in NY</div>
                         </div>
+                        <div class="card_icons d-flex flex-column">
+                            <i class="fas fa-heart"></i>
+                            <i class="fas fa-search" onclick="openModal()"></i>
+                        </div>
                         <div class="card_bottom_shadow"></div>
+                    </div>
+
+                    <!-- Modal Structure -->
+                    <div class="modal" id="productModal">
+                        <div class="modal_content">
+                            <span class="close_btn" onclick="closeModal()">&times;</span>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-12">
+                                    <img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2021/06/06/119434.jpeg"
+                                        alt="Three Milk Cake" class="modal_image">
+                                </div>
+                                <div class="col-md-6 col-sm-12">
+                                    <div class="modal_details">
+                                        <div class="modal_title">Three Milk Cake</div>
+                                        <div class="modal_price">Rs 2,200</div>
+                                        <div class="modal_desc">
+                                            Vanilla sponge cake in three kinds of milk; Whole milk, Evaporated milk, and
+                                            Condensed milk!
+                                        </div>
+                                        <div class="quantity_selector">
+                                            <button class="quantity_btn" onclick="decreaseQuantity()">-</button>
+                                            <div class="quantity_display" id="quantityDisplay">1</div>
+                                            <button class="quantity_btn" onclick="increaseQuantity()">+</button>
+                                            <button class="add_to_cart_btn">Add to cart</button>
+                                        </div>
+                                        <div class="modal_sku mt-3"><strong>SKU:</strong> DR-21019</div>
+                                        <div class="modal_category"><strong>Category:</strong> Cakes</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- About End -->
 
@@ -179,9 +283,6 @@ get_header();
         </div>
     </div>
     <!-- Service End -->
-
-
-
 
 
     <!-- About other Start -->
@@ -296,7 +397,8 @@ get_header();
             </div>
 
             <div class="tab-class text-center">
-                <ul class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
+                <ul
+                    class="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase border-inner p-4 mb-5">
                     <?php
                     $categories = get_first_three_categories();
                     $active = 'active'; // Set the first category as active
@@ -313,16 +415,20 @@ get_header();
                     $active_class = 'show active'; // Set the first tab as active
                     foreach ($categories as $category) {
                         $products = get_products_by_category($category->id);
-                    ?>
+                        ?>
                         <div id="tab-<?php echo $category->id; ?>" class="tab-pane fade <?php echo $active_class; ?> p-0">
                             <div class="container">
                                 <div class="card__container">
                                     <?php foreach ($products as $product) { ?>
                                         <article class="card__article">
-                                            <img src="<?php echo esc_url($product->image_url); ?>" alt="image" class="card__img">
+                                            <img src="<?php echo esc_url($product->image_url); ?>" alt="image"
+                                                class="card__img">
                                             <div class="card__data">
                                                 <h2 class="card__title"><?php echo esc_html($product->title); ?></h2>
-                                                <p class="card__price"><?php echo esc_html('$' . number_format($product->price, 2)); ?></p> <!-- Added price display -->
+                                                <p class="card__price">
+                                                    <?php echo esc_html('$' . number_format($product->price, 2)); ?>
+                                                </p>
+                                                <!-- Added price display -->
                                                 <div class="btn btn-dark">Add To Cart</div>
                                             </div>
                                         </article>
@@ -330,7 +436,7 @@ get_header();
                                 </div>
                             </div>
                         </div>
-                    <?php
+                        <?php
                         $active_class = ''; // Remove active class after first tab
                     }
                     ?>
@@ -340,7 +446,6 @@ get_header();
     </div>
 
     <!-- Products End -->
-
 
 
     <!-- Service Start -->
@@ -553,5 +658,36 @@ get_header();
 
 
 </body>
+<script>
+    function openModal() {
+        document.getElementById('productModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+        document.getElementById('productModal').style.display = 'none';
+    }
+
+    // Close modal when clicking outside of the content
+    window.onclick = function (event) {
+        var modal = document.getElementById('productModal');
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+
+    // Quantity control functions
+    let quantity = 1;
+    function increaseQuantity() {
+        quantity++;
+        document.getElementById('quantityDisplay').textContent = quantity;
+    }
+
+    function decreaseQuantity() {
+        if (quantity > 1) {
+            quantity--;
+            document.getElementById('quantityDisplay').textContent = quantity;
+        }
+    }
+</script>
 
 </html>

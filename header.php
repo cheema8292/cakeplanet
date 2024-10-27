@@ -25,7 +25,9 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Oswald:wght@500;600;700&family=Pacifico&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -38,8 +40,10 @@
 
     <!-- Template Stylesheet -->
     <link href="<?php echo get_template_directory_uri() ?>/style.css" rel="stylesheet">
-    <link href="<?php echo get_template_directory_uri() ?>./assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="<?php echo get_template_directory_uri() ?>./assets/lib/owlcarousel/assets/owl.carousel.min.css"
+        rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"
+        rel="stylesheet">
 
 </head>
 
@@ -80,10 +84,11 @@
 
 <!-- Navbar Start -->
 <nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm py-3 py-lg-0 px-3 px-lg-0">
-    <a href="index.php" class="navbar-brand d-block d-lg-none">
+
+    <!-- <a href="index.php" class="navbar-brand d-block d-lg-none">
         <h1 class="m-0 text-uppercase text-white"><i class="fa fa-birthday-cake fs-1 text-primary me-3"></i>CakeZone
         </h1>
-    </a>
+    </a> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -91,7 +96,8 @@
         <div class="navbar-nav ms-auto mx-lg-auto py-0">
             <a href="<?php echo site_url(''); ?>" class="nav-item nav-link active">Home</a>
             <a href="<?php echo site_url('/about'); ?>" class="nav-item nav-link">About Us</a>
-            <a href="<?php echo site_url('/product'); ?>" class="nav-item nav-link">Menu & Pricing</a>
+            <a href="<?php echo site_url('/product'); ?>" class="nav-item nav-link">Menu</a>
+            <img class="logo mt-3" src="<?php echo get_template_directory_uri(); ?>/assets/img/Layers-Logo.png" alt="">
             <!-- <a href="<?php echo site_url('/product'); ?>" class="nav-item nav-link"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/Screenshot 2024-10-27 025956.png" alt=""></a> -->
             <a href="<?php echo site_url('/team'); ?>" class="nav-item nav-link">Master Chefs</a>
             <a href="<?php echo site_url('/contact'); ?>" class="nav-item nav-link">Contact Us</a>
@@ -101,7 +107,6 @@
                     <span id="cart-counter">0</span>
                 </a>
             </li>
-
         </div>
     </div>
 </nav>
