@@ -224,6 +224,52 @@ add_action('after_switch_theme', 'create_products_table');
 add_action('init', 'create_products_table');
 
 
+
+function create_database_tables()
+{
+    global $wpdb;
+
+    // Set table names (use WordPress table prefix for consistency)
+    $customers_table = $wpdb->prefix . 'customers';
+    $order_items_table = $wpdb->prefix . 'order_items';
+
+    // Include the wpdb class for database queries
+    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
+
+    // SQL query to create the customers table
+    $customers_sql = "CREATE TABLE IF NOT EXISTS $customers_table (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        first_name VARCHAR(50) NOT NULL,
+        last_name VARCHAR(50) NOT NULL,
+        phone1 VARCHAR(15) NOT NULL,
+        phone2 VARCHAR(15),
+        email VARCHAR(100) NOT NULL,
+        address TEXT NOT NULL,
+        location VARCHAR(255),
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    ) ENGINE=InnoDB;";
+
+    // SQL query to create the order_items table
+    $order_items_sql = "CREATE TABLE IF NOT EXISTS $order_items_table (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        customer_id INT NOT NULL,
+        product_id VARCHAR(50) NOT NULL,
+        quantity INT NOT NULL,
+        price DECIMAL(10, 2) NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        FOREIGN KEY (customer_id) REFERENCES $customers_table(id) ON DELETE CASCADE
+    ) ENGINE=InnoDB;";
+
+    // Execute the queries to create the tables
+    dbDelta($customers_sql);
+    dbDelta($order_items_sql);
+}
+
+// Hook the function to run on theme activation
+add_action('after_switch_theme', 'create_database_tables');
+
+add_action('init', 'create_database_tables');
+
 function register_product_menu()
 {
     add_menu_page(
@@ -286,19 +332,23 @@ function render_product_form()
             <table class="form-table">
                 <tr>
                     <th><label for="product_title">Title</label></th>
-                    <td><input type="text" name="product_title" id="product_title" required class="regular-text" value="<?php echo esc_attr($title); ?>"></td>
+                    <td><input type="text" name="product_title" id="product_title" required class="regular-text"
+                            value="<?php echo esc_attr($title); ?>"></td>
                 </tr>
                 <tr>
                     <th><label for="product_description">Description</label></th>
-                    <td><textarea name="product_description" id="product_description" rows="5" class="large-text"><?php echo esc_textarea($description); ?></textarea></td>
+                    <td><textarea name="product_description" id="product_description" rows="5"
+                            class="large-text"><?php echo esc_textarea($description); ?></textarea></td>
                 </tr>
                 <tr>
                     <th><label for="product_price">Price ($)</label></th>
-                    <td><input type="number" name="product_price" id="product_price" step="0.01" required class="regular-text" value="<?php echo esc_attr($price); ?>"></td>
+                    <td><input type="number" name="product_price" id="product_price" step="0.01" required
+                            class="regular-text" value="<?php echo esc_attr($price); ?>"></td>
                 </tr>
                 <tr>
                     <th><label for="product_weight">Weight (lbs)</label></th>
-                    <td><input type="number" name="product_weight" id="product_weight" step="0.01" class="regular-text" value="<?php echo esc_attr($weight); ?>"></td>
+                    <td><input type="number" name="product_weight" id="product_weight" step="0.01" class="regular-text"
+                            value="<?php echo esc_attr($weight); ?>"></td>
                 </tr>
                 <tr>
                     <th><label for="product_category">Category</label></th>
@@ -306,7 +356,8 @@ function render_product_form()
                         <select name="product_category" id="product_category" required>
                             <option value="">Select Category</option>
                             <?php foreach ($categories as $category): ?>
-                                <option value="<?php echo esc_attr($category->id); ?>" <?php selected($selected_category, $category->id); ?>>
+                                <option value="<?php echo esc_attr($category->id); ?>"
+                                    <?php selected($selected_category, $category->id); ?>>
                                     <?php echo esc_html($category->name); ?>
                                 </option>
                             <?php endforeach; ?>
@@ -494,7 +545,8 @@ function render_category_form()
             <table class="form-table">
                 <tr>
                     <th><label for="category_name">Category Name</label></th>
-                    <td><input type="text" name="category_name" id="category_name" required class="regular-text" value="<?php echo esc_attr($name); ?>"></td>
+                    <td><input type="text" name="category_name" id="category_name" required class="regular-text"
+                            value="<?php echo esc_attr($name); ?>"></td>
                 </tr>
             </table>
             <?php submit_button($edit_category ? 'Update Category' : 'Save Category'); ?>
@@ -582,126 +634,64 @@ function get_products_by_category($category_id)
     return $wpdb->get_results($wpdb->prepare("SELECT * FROM $table_name WHERE category_id = %d", $category_id));
 }
 
-$data = json_decode(file_get_contents('php://input'), true);
-$title = $data['title'];
-$price = $data['price'];
+add_action('wp_ajax_place_order', 'place_order');
+add_action('wp_ajax_nopriv_place_order', 'place_order');
 
-// Add the product to the cart session
-$_SESSION['cart'][] = ['title' => $title, 'price' => $price];
-
-// Return the updated cart count as JSON
-echo json_encode([
-    'success' => true,
-    'cart_count' => count($_SESSION['cart'])
-]);
-
-
-
-add_action('wp_ajax_nopriv_process_checkout', 'process_checkout'); // For non-logged-in users
-add_action('wp_ajax_process_checkout', 'process_checkout'); // For logged-in users
-
-function process_checkout()
+function place_order()
 {
-    header('Content-Type: application/json');
-
-    // Get the incoming JSON data
-    $data = json_decode(file_get_contents('php://input'), true);
-
-    // Database connection (use WordPress db connection)
     global $wpdb;
 
-    // Extract customer data
-    $firstName = sanitize_text_field($data['customer']['firstName']);
-    $lastName = sanitize_text_field($data['customer']['lastName']);
-    $phone1 = sanitize_text_field($data['customer']['phone1']);
-    $phone2 = sanitize_text_field($data['customer']['phone2']);
-    $email = sanitize_email($data['customer']['email']);
-    $address = sanitize_textarea_field($data['customer']['address']);
-    $location = sanitize_text_field($data['customer']['location']);
-
-    // Insert customer information into the database (ensure you have a proper table for this)
-    $insertCustomer = $wpdb->insert(
-        'customers', // Replace with your actual table name
-        [
-            'first_name' => $firstName,
-            'last_name' => $lastName,
-            'phone1' => $phone1,
-            'phone2' => $phone2,
-            'email' => $email,
-            'address' => $address,
-            'location' => $location
-        ]
-    );
-
-    if ($insertCustomer) {
-        // Get the last inserted customer ID
-        $customerId = $wpdb->insert_id;
-
-        // Loop through cart items and insert them into an orders or order_items table
-        foreach ($data['cart'] as $item) {
-            $productId = sanitize_text_field($item['id']);
-            $quantity = intval($item['quantity']);
-            $price = floatval($item['price']);
-
-            // Insert into order_items table (ensure you have a proper table structure)
-            $insertOrderItem = $wpdb->insert(
-                'order_items', // Replace with your actual table name
-                [
-                    'customer_id' => $customerId,
-                    'product_id' => $productId,
-                    'quantity' => $quantity,
-                    'price' => $price
-                ]
-            );
-        }
-
-        echo json_encode(['success' => true, 'message' => 'Order placed successfully!']);
-    } else {
-        echo json_encode(['success' => false, 'message' => 'Error inserting customer data.']);
+    // Check if the request contains valid JSON
+    $data = json_decode(file_get_contents('php://input'), true);
+    if (!$data) {
+        wp_send_json_error(['message' => 'Invalid input data.']);
+        wp_die();
     }
 
-    wp_die(); // This is required to properly end the AJAX request
-}
+    // Extract customer information
+    $customer = $data['customer'];
+    $first_name = sanitize_text_field($customer['firstName']);
+    $last_name = sanitize_text_field($customer['lastName']);
+    $phone1 = sanitize_text_field($customer['phone1']);
+    $phone2 = sanitize_text_field($customer['phone2']);
+    $email = sanitize_email($customer['email']);
+    $address = sanitize_text_field($customer['address']);
+    $location = sanitize_text_field($customer['location']);
 
-function create_database_tables()
-{
-    global $wpdb;
-
-    // Set table names (use WordPress table prefix for consistency)
+    // Insert customer data into the customers table
     $customers_table = $wpdb->prefix . 'customers';
+    $result = $wpdb->insert($customers_table, [
+        'first_name' => $first_name,
+        'last_name' => $last_name,
+        'phone1' => $phone1,
+        'phone2' => $phone2,
+        'email' => $email,
+        'address' => $address,
+        'location' => $location,
+        'created_at' => current_time('mysql')
+    ]);
+
+    if ($result === false) {
+        wp_send_json_error(['message' => 'Failed to insert customer data.']);
+        wp_die();
+    }
+
+    // Get the inserted customer's ID
+    $customer_id = $wpdb->insert_id;
+
+    // Insert cart items into the order_items table
     $order_items_table = $wpdb->prefix . 'order_items';
+    foreach ($data['cart'] as $item) {
+        $wpdb->insert($order_items_table, [
+            'customer_id' => $customer_id,
+            'product_id' => sanitize_text_field($item['id']),
+            'quantity' => intval($item['quantity']),
+            'price' => floatval($item['price']),
+            'created_at' => current_time('mysql')
+        ]);
+    }
 
-    // Include the wpdb class for database queries
-    require_once(ABSPATH . 'wp-admin/includes/upgrade.php');
-
-    // SQL query to create the customers table
-    $customers_sql = "CREATE TABLE IF NOT EXISTS $customers_table (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        first_name VARCHAR(50) NOT NULL,
-        last_name VARCHAR(50) NOT NULL,
-        phone1 VARCHAR(15) NOT NULL,
-        phone2 VARCHAR(15),
-        email VARCHAR(100) NOT NULL,
-        address TEXT NOT NULL,
-        location VARCHAR(255),
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    ) ENGINE=InnoDB;";
-
-    // SQL query to create the order_items table
-    $order_items_sql = "CREATE TABLE IF NOT EXISTS $order_items_table (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        customer_id INT NOT NULL,
-        product_id VARCHAR(50) NOT NULL,
-        quantity INT NOT NULL,
-        price DECIMAL(10, 2) NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-        FOREIGN KEY (customer_id) REFERENCES $customers_table(id) ON DELETE CASCADE
-    ) ENGINE=InnoDB;";
-
-    // Execute the queries to create the tables
-    dbDelta($customers_sql);
-    dbDelta($order_items_sql);
+    // If everything is successful, send a success response
+    wp_send_json_success(['message' => 'Order placed successfully!']);
+    wp_die();
 }
-
-// Hook the function to run on theme activation
-add_action('after_switch_theme', 'create_database_tables');

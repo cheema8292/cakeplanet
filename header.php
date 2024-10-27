@@ -45,7 +45,7 @@
 
 
 <!-- Topbar Start -->
-<div class="container-fluid px-0 d-none d-lg-block">
+<!-- <div class="container-fluid px-0 d-none d-lg-block">
     <div class="row gx-0">
         <div class="col-lg-4 text-center bg-secondary py-3">
             <div class="d-inline-flex align-items-center justify-content-center">
@@ -74,7 +74,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 <!-- Topbar End -->
 
 
@@ -92,14 +92,8 @@
             <a href="<?php echo site_url(''); ?>" class="nav-item nav-link active">Home</a>
             <a href="<?php echo site_url('/about'); ?>" class="nav-item nav-link">About Us</a>
             <a href="<?php echo site_url('/product'); ?>" class="nav-item nav-link">Menu & Pricing</a>
+            <!-- <a href="<?php echo site_url('/product'); ?>" class="nav-item nav-link"><img class="logo" src="<?php echo get_template_directory_uri(); ?>/assets/img/Screenshot 2024-10-27 025956.png" alt=""></a> -->
             <a href="<?php echo site_url('/team'); ?>" class="nav-item nav-link">Master Chefs</a>
-            <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
-                <div class="dropdown-menu m-0">
-                    <a href="service" class="dropdown-item">Our Service</a>
-                    <a href="#" class="dropdown-item">Testimonial</a>
-                </div>
-            </div>
             <a href="<?php echo site_url('/contact'); ?>" class="nav-item nav-link">Contact Us</a>
             <li class="nav-item">
                 <a class="nav-link" href="<?php echo site_url('/cart'); ?>">
